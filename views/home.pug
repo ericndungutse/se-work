@@ -1,0 +1,58 @@
+extends base
+
+block content
+     main.main
+          section.section-showcase
+
+               .section-showcase__text-box.align-center
+                    h1.primary-heading.m-b-3
+                         span.primary-heading--main Safe Journey
+                         span.primary-heading--sub get to school and home in a total confort
+                    a.btn.btn--primary.btn--blue.declare-modal-btn.toUpperCase(href='#')
+                         | Declare departure
+          section.manage-departure
+               .align-center.m-b-3
+                    h2.secondary-heading.secondary-heading--white Manage Departure
+               .manage-departure__cards
+                    .card
+                         <i class="fas fa-save card__icon m-b-3"></i>
+                         //- svg.card__icon.m-b-3
+                         //-      use(xlink:href='/img/sprite.svg#icon-enter')
+                         h2.tertiary-heading.gradient.m-b-5 Declare departure
+                         p.m-b-4
+                              | Specify district of departure, destination and date.
+                         button.btn.btn--secondary.btn--blue.toUpperCase.declare-modal-btn(type='button')
+                              | Declare
+                    .card
+                         <i class="fas fa-info-circle card__icon m-b-3"></i>
+                         //- svg.card__icon.m-b-3
+                         //-      use(xlink:href='/img/sprite.svg#icon-file-text')
+                         h2.tertiary-heading.gradient.m-b-5 Departure Details
+                         p.m-b-4
+                              | Specify district of departure, destination and date.
+                         button.btn.btn--secondary.btn--blue.toUpperCase(type='button')
+                              | Details
+                    .card
+                         <i class="far fa-edit card__icon m-b-3"></i>
+
+                         //- svg.card__icon.m-b-3
+                         //-      use(xlink:href='/img/sprite.svg#icon-pencil')
+                         h2.tertiary-heading.gradient.m-b-5 Edit departure
+                         p.m-b-4
+                              | Specify district of departure, destination and date.
+                         button.btn.btn--secondary.btn--blue.toUpperCase(type='button')
+                              | Edit
+                    .card
+                         <i class="fas fa-ban card__icon m-b-3"></i>
+
+                         //- svg.card__icon.m-b-3
+                         //-      use(xlink:href='/img/sprite.svg#icon-exit')
+                         h2.tertiary-heading.gradient.m-b-5 Cancil departure
+                         p.m-b-4
+                              | Specify district of departure, destination and date.
+                         button.btn.btn--secondary.btn--blue.toUpperCase(type='button')
+                              | Cancil
+
+block footer
+     //- FOOTER
+     include _footer

@@ -1,0 +1,15 @@
+header.header
+  a.header__site-name(href='/') Safej
+  nav.user-navigation
+    ul.user-navigation__list
+      if user
+        li.user-navigation__list-item
+          button#logoutBtn.user-navigation__btn.user-navigation__btn--logout Logout
+
+        li.user-navigation__list-item
+          a.user-navigation__link(href='/profile')
+            img.user-navigation__photo(src=`/img/users/${user.photo}` alt='User photo')
+            span.userName(data-departureSite=`${user.departureSite}`)= user.name.split(' ')[0]
+      else 
+        li.user-navigation__list-item
+          button#loginBtn.user-navigation__btn.user-navigation__btn--login(href='#') Login

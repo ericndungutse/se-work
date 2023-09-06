@@ -1,0 +1,105 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(charset='UTF-8')
+    meta(name='description' content='Departure declaration for secondary school boarding students')
+    meta(name='keywords' content='safeJ, student travel declaration')
+    meta(name='author' content='Eric Tuyizere NDUNGUTSE')
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous")
+
+    link(rel="stylesheet" type="text/css" href="/css/style.css")
+
+    title SafeJ | #{title}
+  body 
+    //- LOGIN MODAL
+    #loginModal.modal
+      .modal__container
+        .modal__header
+          button.btn-close-modal.close-modal &times;
+          h2.tertiary-heading.gradient.f-size-4 Login
+        .modal__body
+          form.form.form--login
+            .form__group
+              label.form__label(for='email') Email address
+              input#email.form__input(type='email' placeholder='you@example.com' required='')
+            .form__group.m-b-3
+              label.form__label(for='password') Password
+              input#password.form__input(type='password' placeholder='••••••••' required='' minlength='8')
+            .form__group.form__group--buttons
+              button.btn#btn-form-login.btn--secondary.btn--blue(type='submit')
+                | Login
+
+              button.btn.btn--secondary.btn--grey.close-modal(type="button")
+                | Cancil 
+
+    //- DEPARTURE DECLARATION MODAL
+    #declareDepartureModal.modal
+      .modal__container
+        .modal__header
+          button.btn-close-modal.close-modal &times;
+          h2.tertiary-heading.gradient.f-size-4 Declare departure
+        .modal__body
+          form.form.form--declareDeparure
+            .form__group
+              label.form__label(for='phoneOrEmail') Email or Phone
+              input#phoneOrEmail.form__input(type='text' placeholder='Enter your email or phone' name='phoneOrEmail' required='' minlength='10')
+            .form__group
+              label.form__label(for='passenger') Passenger
+              input#passenger.form__input(type='text' name='passenger' placeholder='Enter full name' required='' minlength='10')
+            .form__group
+              label.form__label(for='districtOfDep') District of departure
+              input#districtOfDep.form__input(type='text' name='districtOfDep' placeholder='Enter district of departure' required='' minlength='4' list='districtsOfDeparture')
+              datalist#districtsOfDeparture
+                option(value='Muhanga')
+                option(value='Kamonyi')
+                option(value='Ruhango')
+                option(value='Nyanza')
+                option(value='Huye')
+                option(value='Nyamagabe')
+                option(value='Gisagara')
+            .form__group
+              label.form__label(for='districtOfDest') District of destination
+              input#districtOfDest.form__input(type='text' name='districtOfDest' placeholder='Enter district of destination' required='' minlength='4')
+            .form__group.m-b-3
+              label.form__label(for='date') Date of departure
+              input#date.form__input(type='date' name='date' placeholder='Enter date of departure' required='')
+            .form__group.form__group--buttons
+              button.btn.btn--secondary.btn--blue#declareBtn(type='submit')
+                | Submit
+
+              button.btn.btn--secondary.btn--grey.close-modal(type="button")
+                | Cancil
+
+    //- Confirm Departure
+    #confirmModal.modal
+      .modal__container
+        .modal__header
+          button.btn-close-modal.close-modal &times;
+          h2.tertiary-heading.gradient.f-size-4 Confirm Departure
+        .modal__body
+          form.form.form--confirm
+            .form__group.m-b-3
+              label.form__label(for='text') Email or Phone
+              input#emailOrPhone.form__input(type='text' placeholder='Enter Email or Phone' required)
+
+            .form__group.form__group--buttons
+              button.btn#btn-form-confirm.btn--secondary.btn--blue(type='submit')
+                | Confirm
+
+              button.btn.btn--secondary.btn--grey.close-modal(type="button")
+                | Cancil
+
+    //- Header
+    include _header
+
+    //- CONTENT
+    block content  
+
+    //- FOOTER
+    block footer
+
+    script(src="js/bundle.js")
+
